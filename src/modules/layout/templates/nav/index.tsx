@@ -1,6 +1,4 @@
 import { Suspense } from "react"
-import Image from "next/image"
-
 import { listRegions } from "@lib/data/regions"
 import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
@@ -22,20 +20,6 @@ export default async function Nav() {
             <div className="h-full">
               <SideMenu regions={regions} />
             </div>
-            <LocalizedClientLink
-              href="/"
-              className="flex items-center hover:opacity-80 transition-opacity duration-200"
-              data-testid="nav-store-link"
-            >
-              <Image
-                src="/imagotipo.png"
-                alt="Cool Bordados"
-                width={120}
-                height={40}
-                className="h-8 w-auto object-contain"
-                priority
-              />
-            </LocalizedClientLink>
           </div>
 
           {/* Center Section: Navigation Links (Desktop) */}
