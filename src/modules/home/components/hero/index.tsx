@@ -1,9 +1,10 @@
 import { Button, Heading } from "@medusajs/ui"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import Banner from "@modules/layout/components/banner"
 
 const Hero = () => {
   return (
-    <div className="h-screen w-full border-b border-ui-border-base relative bg-ui-bg-subtle -mt-[100px]">
+    <div className="h-[calc(100vh+64px)] w-full border-b border-ui-border-base relative bg-ui-bg-subtle -mt-16">
       {/* Preload de la imagen poster con alta prioridad para mejorar el LCP */}
       <link
         rel="preload"
@@ -49,6 +50,10 @@ const Hero = () => {
             Explorar productos
           </Button>
         </LocalizedClientLink>
+      </div>
+
+      <div className="absolute bottom-0 inset-x-0 z-20">
+        <Banner />
       </div>
     </div>
   )
