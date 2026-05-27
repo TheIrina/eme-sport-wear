@@ -14,8 +14,8 @@ export default async function Nav() {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
 
   return (
-    <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 mx-auto duration-200 bg-[#121212] ">
+    <>
+      <header className="sticky top-0 inset-x-0 z-50 h-16 mx-auto duration-200 bg-transparent mix-blend-difference text-white">
         <nav className="content-container txt-xsmall-plus text-white flex items-center justify-between w-full h-full text-small-regular">
           {/* Left Section: Mobile Menu & Logo */}
           <div className="flex items-center gap-x-4">
@@ -84,7 +84,9 @@ export default async function Nav() {
           </div>
         </nav>
       </header>
-      <Banner />
-    </div>
+      <div className="sticky top-16 inset-x-0 z-40">
+        <Banner />
+      </div>
+    </>
   )
 }

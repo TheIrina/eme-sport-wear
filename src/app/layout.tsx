@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" data-mode="light" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
-      <body>
+      <body className="bg-white">
         <main className="relative">{props.children}</main>
         <Analytics />
         <SpeedInsights />

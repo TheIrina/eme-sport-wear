@@ -49,8 +49,8 @@ const CollectionsDropdown = () => {
           leaveTo="opacity-0 translate-y-1"
         >
           <PopoverPanel
-            static
-            className="hidden small:block absolute top-[calc(100%+15px)] -left-4 w-[280px] bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl overflow-hidden text-neutral-200"
+            anchor="bottom start"
+            className="hidden small:block z-50 w-[280px] bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl overflow-hidden text-neutral-200"
           >
             <div className="p-5 border-b border-neutral-800 bg-black/20">
               <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">Colecciones</h3>
