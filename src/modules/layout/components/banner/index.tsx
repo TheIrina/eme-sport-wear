@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
+import React from "react"
 
 const messages = [
   "🚚 ENVÍO GRATIS A TODO EL PAÍS",
@@ -8,23 +8,20 @@ const messages = [
   "💬 ATENCIÓN PERSONALIZADA",
 ]
 
+// Create a sufficiently long array that represents one full cycle
+const singleSet = [...messages, ...messages, ...messages, ...messages]
+// Duplicate the cycle so the -50% translation loops seamlessly
+const doubleSet = [...singleSet, ...singleSet]
+
 const Banner = () => {
-  const [currentMessageIndex, setCurrentMessageIndex] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % messages.length)
-    }, 5000)
-
-    return () => clearInterval(interval)
-  }, [])
-
   return (
-    <div className="bg-white text-black py-2">
-      <div className="container mx-auto flex items-center justify-center">
-        <p className="text-sm font-light">
-          {messages[currentMessageIndex]}
-        </p>
+    <div className="bg-black text-white py-2 overflow-hidden whitespace-nowrap">
+      <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+        {doubleSet.map((msg, index) => (
+          <span key={index} className="mx-8 text-sm font-light">
+            {msg}
+          </span>
+        ))}
       </div>
     </div>
   )
