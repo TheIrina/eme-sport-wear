@@ -52,17 +52,17 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
             <div className="fixed inset-0 bg-black/40 backdrop-blur-sm" />
           </Transition.Child>
 
-          <div className="fixed inset-0 flex">
+          <div className="fixed inset-0 flex p-4 sm:p-6 pointer-events-none">
             <Transition.Child
               as={Fragment}
-              enter="transform transition ease-in-out duration-300"
-              enterFrom="-translate-x-full"
-              enterTo="translate-x-0"
-              leave="transform transition ease-in-out duration-300"
-              leaveFrom="translate-x-0"
-              leaveTo="-translate-x-full"
+              enter="transition-opacity ease-linear duration-200"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="transition-opacity ease-linear duration-150"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
             >
-              <Dialog.Panel className="relative flex w-full max-w-[320px] flex-col bg-neutral-900 border-r border-neutral-800 shadow-2xl overflow-hidden">
+              <Dialog.Panel className="relative flex w-full max-w-[320px] flex-col bg-neutral-900 border border-neutral-800 shadow-2xl overflow-hidden rounded-3xl h-full pointer-events-auto">
                 <div className="flex flex-col h-full text-neutral-200">
                   {/* Header - Similar to CollectionsDropdown header */}
                   <div className="flex items-center justify-between p-5 border-b border-neutral-800 bg-black/20">
