@@ -1,11 +1,12 @@
 "use client"
 
 import React from "react"
+import { Truck, CreditCard, ChatCircleDots } from "@phosphor-icons/react"
 
 const messages = [
-  "🚚 ENVÍO GRATIS A TODO EL PAÍS",
-  "💳 PAGOS SEGUROS",
-  "💬 ATENCIÓN PERSONALIZADA",
+  { text: "ENVÍO GRATIS A TODO EL PAÍS", Icon: Truck },
+  { text: "PAGOS SEGUROS", Icon: CreditCard },
+  { text: "ATENCIÓN PERSONALIZADA", Icon: ChatCircleDots },
 ]
 
 // Create a sufficiently long array that represents one full cycle
@@ -18,8 +19,9 @@ const Banner = () => {
     <div className="bg-black text-white py-2 overflow-hidden whitespace-nowrap">
       <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
         {doubleSet.map((msg, index) => (
-          <span key={index} className="mx-8 text-sm font-light">
-            {msg}
+          <span key={index} className="mx-8 text-sm font-light flex items-center gap-2">
+            <msg.Icon size={18} weight="regular" />
+            {msg.text}
           </span>
         ))}
       </div>
