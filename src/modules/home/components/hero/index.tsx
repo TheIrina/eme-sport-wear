@@ -1,26 +1,29 @@
-import { Github } from "@medusajs/icons"
 import { Button, Heading } from "@medusajs/ui"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 const Hero = () => {
   return (
-    <div className="h-[94vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
-      {/* Video de fondo */}
-      {/**
-       * 
-        <video
+    <div className="h-[94vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle -mt-[100px]">
+      {/* Preload de la imagen poster con alta prioridad para mejorar el LCP */}
+      <link
+        rel="preload"
+        href="/hero-poster.avif"
+        as="image"
+        fetchPriority="high"
+      />
+
+      {/* Video de fondo con poster y pre-carga de metadatos */}
+      <video
         autoPlay
         loop
         muted
         playsInline
         preload="metadata"
-        className="absolute inset-0 w-full h-full object-cover"
+        poster="/hero-poster.avif"
+        className="absolute inset-0 w-full h-full object-cover max-h-[94vh]"
       >
-        <source src="/video.webm" type="video/webm" />
+        <source src="/hero.mp4" type="video/mp4" />
       </video>
-       */}
-
-      <img src="/banner.avif" alt="hero banner" className="absolute inset-0 w-full h-full object-cover max-h-[94vh]" />
       
 
       {/* Overlay para mejorar la legibilidad del texto */}
