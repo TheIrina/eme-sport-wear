@@ -62,10 +62,10 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Panel className="relative flex w-full max-w-[320px] flex-col bg-neutral-900 border border-neutral-800 shadow-2xl overflow-hidden rounded-3xl h-full pointer-events-auto">
+              <Dialog.Panel className="relative flex w-full max-w-[320px] flex-col bg-black shadow-2xl overflow-hidden rounded-3xl h-full pointer-events-auto">
                 <div className="flex flex-col h-full text-neutral-200">
                   {/* Header - Similar to CollectionsDropdown header */}
-                  <div className="flex items-center justify-between p-5 border-b border-neutral-800 bg-black/20">
+                  <div className="flex items-center justify-between p-5 bg-black">
                     <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">Menú</h3>
                     <button
                       onClick={close}
@@ -98,7 +98,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                   </div>
 
                   {/* Footer - Minimal and integrated */}
-                  <div className="p-4 border-t border-neutral-800 bg-black/20 space-y-4">
+                  <div className="p-4 bg-black space-y-4">
                     <div className="px-2">
                       {regions && (
                         <CountrySelect
@@ -107,7 +107,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                         />
                       )}
                     </div>
-                    <div className="px-2 pt-4 border-t border-neutral-800/50">
+                    <div className="px-2 pt-4">
                       <p className="text-[10px] text-neutral-500 uppercase tracking-widest font-medium">
                         © {new Date().getFullYear()} Cool Bordados
                       </p>
