@@ -73,9 +73,9 @@ export default function SearchModal() {
       </button>
 
       <Modal isOpen={isOpen} close={close} size="large" search>
-        <div className="flex flex-col w-full bg-[#1a1a1a]/95 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl max-h-[80vh] min-h-[200px] mt-16 border border-white/10 ring-1 ring-white/5">
+        <div className="flex flex-col w-full bg-black rounded-2xl overflow-hidden shadow-2xl max-h-[80vh] min-h-[200px] mt-16">
           {/* Search Header */}
-          <div className="flex items-center border-b border-white/10 p-5 gap-4 bg-gradient-to-r from-[#121212] to-[#1a1a1a]">
+          <div className="flex items-center p-5 gap-4 bg-black">
             <div className="p-2 bg-white/5 rounded-xl">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/60">
                 <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -101,7 +101,7 @@ export default function SearchModal() {
           </div>
 
           {/* Results Area */}
-          <div className="flex-1 overflow-y-auto p-4 bg-[#0f0f0f]/50">
+          <div className="flex-1 overflow-y-auto p-4 bg-black">
             {isPending && (
               <div className="flex items-center justify-center gap-3 py-12">
                 <div className="w-5 h-5 border-2 border-white/20 border-t-white/60 rounded-full animate-spin"></div>

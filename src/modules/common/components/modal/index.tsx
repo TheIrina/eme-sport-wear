@@ -34,7 +34,10 @@ const Modal = ({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black/70 backdrop-blur-md h-screen" />
+          <div className={clx("fixed inset-0 h-screen", {
+            "bg-black/40 backdrop-blur-sm": search,
+            "bg-black/70 backdrop-blur-md": !search
+          })} />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-hidden">
@@ -49,12 +52,12 @@ const Modal = ({
           >
             <Transition.Child
               as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
+              enter={search ? "transition-opacity ease-linear duration-200" : "ease-out duration-300"}
+              enterFrom={search ? "opacity-0" : "opacity-0 scale-95"}
+              enterTo={search ? "opacity-100" : "opacity-100 scale-100"}
+              leave={search ? "transition-opacity ease-linear duration-150" : "ease-in duration-200"}
+              leaveFrom={search ? "opacity-100" : "opacity-100 scale-100"}
+              leaveTo={search ? "opacity-0" : "opacity-0 scale-95"}
             >
               <Dialog.Panel
                 data-testid={dataTestId}
