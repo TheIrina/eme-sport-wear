@@ -1,6 +1,6 @@
 import { getBaseURL } from "@lib/util/env"
 import { Metadata } from "next"
-import "styles/globals.css"
+import "../styles/globals.css"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/react"
