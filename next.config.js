@@ -8,7 +8,6 @@ checkEnvVariables()
  */
 const nextConfig = {
   // cacheComponents: true,
-  outputFileTracingRoot: path.join(__dirname, "../"),
   reactStrictMode: true,
   logging: {
     fetches: {
